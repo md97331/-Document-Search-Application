@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Index</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 8px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #f2f2f2; }
+        tr:hover {background-color: #f5f5f5;}
+        #results { margin-top: 20px; }
+        .error { color: red; }
+        .query-headline { margin-top: 20px; }
+        button { margin-left: 10px; }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $('#searchForm').on('submit', function(e) {
+                e.preventDefault();
+                var query = $('#query').val();
+                clearResults();
+                if (query) {
+                    $('#query-headline').text('Query: ' + query);
+                    $.ajax({
+                        url: '/search',
+                        type: 'POST',
+                        contentType: 'application/json',
+                        data: JSON.stringify({ 'query': query }),
+                        success: function(response) {
+                            if(response.error) {
+                                $('#error').text(response.error);
+                            } else {
+                                response.results.forEach(function(result) {
+                                    $('#resultsTable tbody').append(
+                                        '<tr>' +
+                                            '<td>' + result.document + '</td>' +
+                                            '<td>' + result.tfidf + '</td>' +
+                                            '<td>' + result.similarity + '</td>' +
+                                            '<td><a href="' + result.download_url + '" download>Download</a></td>' +
+                                            '<td><a href="' + result.view_url + '" target="_blank">View</a></td>' + 
+                                        '</tr>'
+                                    );
+                                });
+                            }
+                        }
+                    });
+                } else {
+                    $('#error').text('Please enter a query.');
+                }
+                $('#query').val(''); // Clear the query field
+            });
+
+            $('#clearButton').click(function() {
+                clearResults();
+                $('#query').val(''); // Clear the query field
+                $('#query-headline').text('');
+                $('#error').text('');
+            });
+
+            function clearResults() {
+                $('#resultsTable tbody').empty();
+                $('#error').text('');
+            }
+        });
+    </script>
+</head>
+<body>
+    <h1>Search in Index</h1>
+    <form id="searchForm">
+        <input type="text" id="query" placeholder="Enter search query here...">
+        <button type="submit">Search</button>
+        <button type="button" id="clearButton">Clear</button>
+    </form>
+    <p id="error" class="error"></p>
+    <p id="query-headline" class="query-headline"></p>
+    <div id="results">
+        <table id="resultsTable">
+            <thead>
+                <tr>
+                    <th>Document</th>
+                    <th>TF-IDF Score</th>
+                    <th>Cosine Similarity</th>
+                    <th>Download</th>
+                    <th>View Document</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Results will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
