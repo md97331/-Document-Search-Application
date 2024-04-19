@@ -13,8 +13,8 @@ base_dirs = ['/PROJ/[FLASK] main/docs']
 def extract_text_from_html(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
         soup = BeautifulSoup(file, 'html.parser')
-        
         text = soup.get_text()
+        print(text)
     return text
 
 
