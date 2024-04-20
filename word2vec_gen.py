@@ -35,7 +35,7 @@ def preprocess_documents(documents):
     return [gensim.utils.simple_preprocess(doc) for doc in documents]
 
 # Specify the directory containing HTML documents
-docs_directory = '/Users/mariodiaz/Desktop/CS429/PROJ/[FLASK] main/docs'
+docs_directory = '/[FLASK] main/docs'
 documents = process_directory(docs_directory)
 processed_docs = preprocess_documents(documents)
 
@@ -47,6 +47,6 @@ model_to_save = model.wv
 model_to_save.save_word2vec_format('model.bin', binary=True)
 
 # Alternatively, you can use joblib to save the model
-joblib.dump(model_to_save, 'word2vec_model.pkl')
+joblib.dump(model_to_save, 'word2vec_model2.pkl')
 
 print("Word2Vec model has been trained and saved successfully as a .pkl file.")
