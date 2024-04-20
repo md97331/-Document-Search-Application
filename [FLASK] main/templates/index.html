@@ -31,6 +31,8 @@
                         success: function(response) {
                             if(response.error) {
                                 $('#error').text(response.error);
+                            } else if( response.message) {
+                                $('#resultsTable tbody').append('<tr><td colspan="5">No results found.</td></tr>');
                             } else {
                                 response.results.forEach(function(result) {
                                     $('#resultsTable tbody').append(

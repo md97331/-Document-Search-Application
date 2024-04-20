@@ -71,6 +71,11 @@ def search():
     combined_similarities = np.zeros_like(similarities_tfidf_scaled)
     combined_similarities[valid_indices] = similarities_tfidf_scaled[valid_indices] + similarities_w2v_scaled[valid_indices]
 
+    if not any(valid_indices):
+        print("message query not")
+        return jsonify({"message": "The query did not retrieve any results."})
+
+
     # Sort the documents based on the combined similarity scores
     top_indices = combined_similarities.argsort()[-10:][::-1]
 
