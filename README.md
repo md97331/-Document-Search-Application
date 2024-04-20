@@ -32,19 +32,98 @@ python app.py
 3. Open a web browser and navigate to `http://localhost:5000` to access the search interface.
 4. Enter search queries to retrieve relevant documents based on the content.
 
-## Conclusion
-The application has demonstrated the ability to facilitate effective document retrieval based on content similarity. The integration of TF-IDF and Word2Vec has shown to significantly enhance the relevance of the search results. Future work will focus on refining the system's capability to process complex queries through advanced phrase recognition techniques.
-
-## Data Sources
-The application conducts searches on a locally hosted corpus of HTML files stored within the `./[FLASK] main/docs` directory.
-
 ## Test Cases
 The application has undergone rigorous testing with a variety of queries to ensure the accuracy and relevance of the search results. Tests include single-word and multi-word queries, assessing the efficacy of both the TF-IDF and Word2Vec models.
 
+### Sample Queries
+
+To demonstrate the capabilities of the Document Search Application, the following queries are designed to test various aspects of the search system's performance. Each query is chosen to reflect the system's ability to handle diverse topics and content types:
+
+1. **Query**: "Global warming impacts"  
+   **Why**: Tests the application's ability to fetch documents on environmental science and the current global issue of climate change.
+
+![Search Interface Example](image/img10.png)
+
+2. **Query**: "Technology"  
+   **Why**: Evaluates the system's effectiveness in returning current and emerging technological topics.
+
+![Search Interface Example](image/img9.png)
+
+3. **Query**: "Renaissance art movements"  
+   **Why**: Assesses the system's performance in retrieving historical content, focusing on art history.
+
+![Search Interface Example](image/img8.png)
+
+4. **Query**: "Python programming tips"  
+   **Why**: Chosen to test the retrieval of educational content related to technology and programming.
+
+![Search Interface Example](image/img7.png)
+
+5. **Query**: "COVID-19 pandemic response"  
+   **Why**: Selected to evaluate the system's response to queries about significant ongoing global health crises.
+
+![Search Interface Example](image/img6.png)
+
+6. **Query**: "Apple"  
+   **Why**: Tests how well the system retrieves information related to a famous technology company.
+
+![Search Interface Example](image/img5.png)
+
+7. **Query**: "Quantum computing applications"  
+   **Why**: Assesses the system's ability to handle content about advanced scientific topics and their applications.
+
+![Search Interface Example](image/img4.png)
+
+8. **Query**: "Mars rover missions"  
+   **Why**: Chosen to test the system’s ability to provide specific content related to space exploration.
+
+![Search Interface Example](image/img3.png)
+
+9. **Query**: "Economic impact of COVID-19"  
+   **Why**: Tests the system's ability to handle interdisciplinary content bridging health and economic domains.
+
+![Search Interface Example](image/img2.png)
+
+10. **Query**: "Advancements in renewable energy"  
+    **Why**: Evaluates how well the system retrieves documents about sustainable technologies and environmental initiatives.
+    
+![Search Interface Example](image/img1.png)
+
+
+## Conclusion
+The application has demonstrated the ability to facilitate effective document retrieval based on content similarity. The integration of TF-IDF and Word2Vec has shown to significantly enhance the relevance of the search results. The inclusion of Scrapy for document collection provides a substantial corpus for more nuanced search functionalities..
+
+## Data Sources
+The application conducts searches on a locally hosted corpus of HTML files stored within the `./[FLASK] main/docs` directory. All the files within docs where retrieved using Scrappy, with 3 different spiders. The target URL where wikipedia, newspapers, and Gutenberg project.
+
 ## Source Code
-The source code repository includes:
-- `app.py`: The main Flask application.
-- `requirements.txt`: A list specifying the Python libraries required for the project.
+
+The source code for the Document Search Application is structured as follows:
+
+- `PROJ/`
+  - `[DATA] testing/`: Contains data used for testing purposes.
+  - `[FLASK] main/`: The main directory for the Flask application.
+    - `docs/`: Contains the HTML documents that the application will search through.
+    - `templates/`: Holds the HTML templates used by Flask to render the search interface.
+      - `index.html`: The main HTML file for the search interface.
+    - `app.py`: The core Flask application script that runs the web server and search functionality.
+  - `CRAWLING_main/`: Contains the components for web crawling and scraping.
+    - `spiders/`: Directory for Scrapy spiders.
+      - `catalog_gov_spider.py`: A Scrapy spider for crawling government catalog websites.
+      - `news_spider.py`: A Scrapy spider for crawling news websites.
+      - `wiki_spider.py`: A Scrapy spider specifically for crawling Wikipedia pages.
+      - `items.py`: Defines the Scrapy Item classes.
+      - `middlewares.py`: Contains middleware components for Scrapy.
+      - `pipelines.py`: Defines Scrapy pipelines for post-processing scraped data.
+      - `settings.py`: Configuration settings for Scrapy.
+    - `scrapy.cfg`: The main configuration file for Scrapy.
+  - `index_creator.py`: Script for creating the search index from the scraped HTML documents.
+  - `inv_index.pkl`: The pickled inverted index file generated by `index_creator.py`.
+  - `model.bin`: The binary file representing the Word2Vec model.
+  - `README.md`: The markdown file providing documentation for the project.
+  - `word2vec_gen.py`: Script for generating the Word2Vec model from documents.
+  - `word2vec_model.pkl`: The pickled Word2Vec model generated by `word2vec_gen.py`.
+
 
 ### Dependencies
 The application utilizes several open-source libraries, listed as follows:
@@ -63,9 +142,8 @@ Please reference the following sources for more information on the technologies 
 4. "Flask Documentation." Pallets Projects. [Flask Documentation](https://flask.palletsprojects.com/en/1.1.x/)
 5. Pedregosa, F. et al. "Scikit-learn: Machine Learning in Python." *Journal of Machine Learning Research* 12 (2011): 2825-2830.
 6. "Scrapy 2.4 Documentation." Scrapy. [Scrapy Documentation](https://docs.scrapy.org/en/latest/)
-7. "Beautiful Soup Documentation." Crummy. [Beautiful Soup 4.
-
-9.0 Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+7. "Beautiful Soup Documentation." Crummy. [Beautiful Soup 4.9.0 Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+   
 
 Special thanks to ChatGPT for project assistance and guidance. A nod of gratitude to random YouTube professors for their Flask tutorials which have significantly contributed to the learning process. This project wouldn't be what it is without the collective wisdom shared by the open-source community.
 
