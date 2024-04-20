@@ -90,6 +90,12 @@ To demonstrate the capabilities of the Document Search Application, the followin
 ![Search Interface Example](images/img1.png)
 
 
+10. **Query**: "ERROR: apsockasc"  
+    **Why**: Evaluates how the system handles invalid queries.
+    
+![Search Interface Example](images/err1.png)
+
+
 ## Conclusion
 The application has demonstrated the ability to facilitate effective document retrieval based on content similarity. The integration of TF-IDF and Word2Vec has shown to significantly enhance the relevance of the search results. The inclusion of Scrapy for document collection provides a substantial corpus for more nuanced search functionalities..
 
