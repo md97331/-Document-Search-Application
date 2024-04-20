@@ -42,47 +42,47 @@ To demonstrate the capabilities of the Document Search Application, the followin
 1. **Query**: "Global warming impacts"  
    **Why**: Tests the application's ability to fetch documents on environmental science and the current global issue of climate change.
 
-![Search Interface Example](images/img10.png)
+![Search Interface Example](images/img0.png)
 
 2. **Query**: "Technology"  
    **Why**: Evaluates the system's effectiveness in returning current and emerging technological topics.
 
-![Search Interface Example](images/img9.png)
+![Search Interface Example](images/img2.png)
 
 3. **Query**: "Renaissance art movements"  
    **Why**: Assesses the system's performance in retrieving historical content, focusing on art history.
 
-![Search Interface Example](images/img8.png)
+![Search Interface Example](images/img3.png)
 
 4. **Query**: "Python programming tips"  
    **Why**: Chosen to test the retrieval of educational content related to technology and programming.
 
-![Search Interface Example](images/img7.png)
+![Search Interface Example](images/img4.png)
 
 5. **Query**: "COVID-19 pandemic response"  
    **Why**: Selected to evaluate the system's response to queries about significant ongoing global health crises.
 
-![Search Interface Example](images/img6.png)
+![Search Interface Example](images/img5.png)
 
 6. **Query**: "Apple"  
    **Why**: Tests how well the system retrieves information related to a famous technology company.
 
-![Search Interface Example](images/img5.png)
+![Search Interface Example](images/img6.png)
 
 7. **Query**: "Quantum computing applications"  
    **Why**: Assesses the system's ability to handle content about advanced scientific topics and their applications.
 
-![Search Interface Example](images/img4.png)
+![Search Interface Example](images/img7.png)
 
 8. **Query**: "Mars rover missions"  
    **Why**: Chosen to test the system’s ability to provide specific content related to space exploration.
 
-![Search Interface Example](images/img3.png)
+![Search Interface Example](images/img8.png)
 
 9. **Query**: "Economic impact of COVID-19"  
    **Why**: Tests the system's ability to handle interdisciplinary content bridging health and economic domains.
 
-![Search Interface Example](images/img2.png)
+![Search Interface Example](images/img9.png)
 
 10. **Query**: "Advancements in renewable energy"  
     **Why**: Evaluates how well the system retrieves documents about sustainable technologies and environmental initiatives.
