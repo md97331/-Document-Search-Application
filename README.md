@@ -1,7 +1,7 @@
 # CS429 Project: Document Search Application
 
 ## Abstract
-The Document Search Application is an innovative tool engineered to enhance the searchability of HTML documents. The application employs TF-IDF (Term Frequency-Inverse Document Frequency) for term importance evaluation and Word2Vec for semantic analysis. This initiative is part of an ongoing effort to augment phrase recognition capabilities and possibly integrate models like Doc2Vec for an improved understanding of document context.
+The Document Search Application is a tool with the goal to search through HTML documents. The application employs TF-IDF (Term Frequency-Inverse Document Frequency) for term importance evaluation and Word2Vec for semantic analysis. 
 
 ## Overview
 Our Flask-based web application offers users the ability to search through a corpus of HTML documents by analyzing the content using state-of-the-art natural language processing techniques. The system harnesses TF-IDF to measure word significance and utilizes Word2Vec to grasp the semantic relationships between words within the corpus. The next phase includes the advancement of phrase recognition and context understanding through potential incorporation of sophisticated models such as Doc2Vec.
@@ -25,7 +25,8 @@ pip install Flask numpy gensim nltk scikit-learn beautifulsoup4 scrapy
 
 ### Running the Application
 1. Clone the repository to a local directory.
-2. Execute `app.py` to start the Flask web server:
+2. Navigate to the `[FLASK] main` directory. This is where the main Flask application files are located. 
+3. Execute `app.py` to start the Flask web server:
 ```bash
 python app.py
 ```
@@ -100,7 +101,7 @@ To demonstrate the capabilities of the Document Search Application, the followin
 The application has demonstrated the ability to facilitate effective document retrieval based on content similarity. The integration of TF-IDF and Word2Vec has shown to significantly enhance the relevance of the search results. The inclusion of Scrapy for document collection provides a substantial corpus for more nuanced search functionalities..
 
 ## Data Sources
-The application conducts searches on a locally hosted corpus of HTML files stored within the `./[FLASK] main/docs` directory. All the files within docs where retrieved using Scrappy, with 3 different spiders. The target URL where wikipedia, newspapers, and Gutenberg project.
+The application conducts searches on a locally hosted corpus of HTML files stored within the `./[FLASK] main/docs` directory. All the files within docs where retrieved using Scrappy, with 3 different spiders. The target URL where wikipedia, newspapers, and The Gutenberg project.
 
 ## Source Code
 
@@ -151,5 +152,5 @@ Please reference the following sources for more information on the technologies 
 7. "Beautiful Soup Documentation." Crummy. [Beautiful Soup 4.9.0 Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
    
 
-Special thanks to ChatGPT for project assistance and guidance. A nod of gratitude to random YouTube professors for their Flask tutorials which have significantly contributed to the learning process. This project wouldn't be what it is without the collective wisdom shared by the open-source community.
+Special thanks to ChatGPT for project assistance and guidance. A nod of gratitude to YouTube Channels: freecodecamp.org and Krish Naik for their Flask tutorials which have significantly contributed to the learning process. This project wouldn't be what it is without the collective wisdom shared by the open-source community.
 
