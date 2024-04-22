@@ -32,7 +32,8 @@
                             if(response.error) {
                                 $('#error').text(response.error);
                             } else if( response.message) {
-                                $('#resultsTable tbody').append('<tr><td colspan="5">No results found.</td></tr>');
+                                $('#resultsTable tbody').append('<tr><td colspan="5">-</td></tr>');
+                                $('#error').text('Query is invalid or is not found');
                             } else {
                                 response.results.forEach(function(result) {
                                     $('#resultsTable tbody').append(
@@ -50,6 +51,7 @@
                     });
                 } else {
                     $('#error').text('Please enter a query.');
+                    $('#query-headline').text('');
                 }
                 $('#query').val(''); // Clear the query field
             });
