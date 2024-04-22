@@ -1,0 +1,8 @@
+Flask>=2.0.2
+numpy
+gensim
+nltk
+scikit-learn
+beautifulsoup4
+scrapy
+webbrowser

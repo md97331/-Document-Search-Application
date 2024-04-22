@@ -30,8 +30,13 @@ pip install Flask numpy gensim nltk scikit-learn beautifulsoup4 scrapy
 ```bash
 python app.py
 ```
-3. Open a web browser and navigate to `http://localhost:5000` to access the search interface.
+3. Open a web browser and navigate to `http://127.0.0.1:5000` to access the search interface.
 4. Enter search queries to retrieve relevant documents based on the content.
+   
+Alternatively, you can run the script:
+```bash
+./RunMe
+```
 
 ## Test Cases
 The application has undergone rigorous testing with a variety of queries to ensure the accuracy and relevance of the search results. Tests include single-word and multi-word queries, assessing the efficacy of both the TF-IDF and Word2Vec models.
